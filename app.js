@@ -43,7 +43,7 @@ app.get('/api/random', (req, res) => {
     return res.send(randomNumber(1024));
 });
 
-app.get('/api/count_vowels/:countallthevowels', (req, res) => {
+app.get('/api/count_vowels/:word', (req, res) => {
     return res.send(countVowel(req.params.word));
 });
 
