@@ -24,8 +24,9 @@ function countVowel(countallthevowels) {
         "word": countallthevowels,
         "vowels": count = countallthevowels.match(/[aeiouåäö]/gi).length
     };
-    return countVowel;
+    return countVowel
 };
+
 
 // Set Views
 app.set('views', 'public/views');
@@ -45,6 +46,10 @@ app.get('/api/random', (req, res) => {
 
 app.get('/api/count_vowels/:word', (req, res) => {
     return res.send(countVowel(req.params.word));
+});
+
+app.get('/api/custom_random/:num', (req, res) => {
+    return res.send(randomNumber(req.params.num));
 });
 
 // listen on port
